@@ -18,12 +18,16 @@ export class RouteComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    // The Router is completely reactive as well, so we can subscribe to any events on it,
+    // in this case we're grabbing the "params", so we can get hold of anything in the URL
+    // /route/:id/:name
     this.subscription = this.route.params.subscribe(params => {
       this.params = params;
     });
   }
 
   ngOnDestroy() {
+    // Don't forget with this type you want to "unsubscribe" from it since it doesn't automatically close
     this.subscription.unsubscribe();
   }
 
