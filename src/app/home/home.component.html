@@ -1,0 +1,14 @@
+<h1>Home</h1>
+
+<form [formGroup]="nameForm">
+  <input formControlName="first" name="first" placeholder="first name:" />
+
+  <input formControlName="last" name="last" placeholder="last name:" />
+</form>
+
+{{ nameForm.value | json }}
+
+
+<br><br>
+
+<app-outer></app-outer>
